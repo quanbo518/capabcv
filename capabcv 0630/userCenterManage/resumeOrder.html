@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>订单中心</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fonts/cv3.0/icon-font.css">
+    <link rel="stylesheet" href="../Css/StyleGlobal.css">
+    <link rel="stylesheet" href="../Css/headandfoot.css">
+    <link rel="stylesheet" href="../Css/UserCenterManage/resumeOrder.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    .active-curr {
+        background: #f2f2f2;
+        border-left: 3px solid #ff7561;
+    }
+</style>
+<body style="background: #f4f4f4">
+<!--导航-->
+<div id="head" style="z-index:9999">
+    <div id="top" style="height:50px;">
+        <header id="header">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3 col-sm-4">
+                            <div class="navbar-header header_logo">
+                                <a href="http://www.capabcv.com" class="navbar-brand"><img src="/Images/LOGO.png"
+                                                                                           style="height:20px;"
+                                                                                           alt="logo"/></a>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-7 col-sm-6 nav_list">
+                            <div id="capabmenu" class="collapse navbar-collapse navbar-right" style="width:100%" ;>
+                                <div class="col-lg-2 col-md-2 col-sm-0"></div>
+                                <ul class="nav navbar-nav" style="margin:0 auto">
+                                    <li><a href="/">首页</a></li>
+                                    <!--<li><a href="/Test/TestIndex.aspx">自我测评</a></li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            综合服务
+                                            <i class="iconfont icon-xiala icon_down"></i>
+                                        </a>
+                                        <a href="/Company/CompanyList.aspx?pagen=1">发现公司</a>
+                                    </li>
+                                    <li class="hidden-sm"><a href="/Library.aspx">职场建议</a></li>
+                                    <li class="hidden-sm"><a href="/Company/Companyjobsearch.aspx">热招职位</a></li>-->
+                                    <li>
+                                        <a href="/resumev2/formchoice.aspx?Reback=0&T=&Classify=&sCharacteristic=&stamp=">在线简历</a>
+                                    </li>
+                                    <li><a href="/resumedownloadlist/template">简历模板</a></li>
+                                    <li><a href="/resumecase">简历范文</a></li>
+                                    <li><a href="/resumearticle">求职攻略</a></li>
+                                    <li><a href="http://www.capablist.com/category/header.html?tags=职业" target="_blank">职业生涯</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 nav_list">
+                            <div class="collapse navbar-collapse" style="width:100%">
+                                <div class="nav navbar-nav navbar-right" style="width:100%">
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="text-align: center;">
+
+                                    </div>
+                                    <div id="userinfohead" class="col-lg-6 col-md-6 col-sm-6"
+                                         style=" text-align: center;">
+                                        <div class='dropdown user_dropdown'><span
+                                                class='iconfont icon-user nav_user dropdown-toggle' id="dLabel"
+                                                data-toggle="dropdown"></span>
+                                            <ul class='dropdown-menu user_downlist' role='menu'
+                                                aria-labelledby='dLabel'>
+                                                <li><a href='/SimpReglog.aspx?ingate=1&stamp=&Reurl=&T='
+                                                       class='iconfont icon-zhuye'>登录领贤</a></li>
+                                                <li><a href='/userpassback.aspx' target='_blank'
+                                                       class='iconfont icon-jianliguanli'>找回密码</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--
+			<section id="exploreMeu" class="hidden-xs">
+				<div class="container">
+					<div class="img_wrap" style="width: 758px;">
+						<a href="/Company/CompanyDefault.aspx?nId=2"><img src="/Images/explore1.jpg" alt="explore" class="img-responsive"></a>
+						<a href=""><img src="/Images/explore2.jpg" alt="explore" class="img-responsive"/></a>
+						<a href=""><img src="/Images/explore3.jpg" alt="explore" class="img-responsive"/></a>
+					</div>
+				</div>
+				<div class="explorebar"></div>
+			</section>	-->
+        </header>
+        <!--点击探索发现出现下拉框-->
+        <section id="explorebox"></section>
+    </div>
+</div>
+
+<div class="container main">
+
+
+    <div class="left-bar"></div>
+    <div class="row">
+        <div class="col-md-9 col-sm-9 col-xs-12 container-main pull-right">
+            <div class="container-right ">
+                <div class="shop_right ">
+                    <div class="shop_top top-describe" style="border-radius: 4px">
+                        <ul class="shop_top_left pull-left">
+                            <li class=""><span class="member-level">我的权限</span>
+
+                            </li>
+                            <li class="vip_img"><span class="vip-title"></span></li>
+                        </ul>
+
+
+                        <ul class="shop_top_right pull-right">
+                            <li>已下载<span class="downNum">0</span>份</li>
+                            <li>剩余下载<span class="surplusDownNum">0</span>份</li>
+                            <li style="">已制作简历<span class="finish-resume">0</span>份</li>
+                            <li style="">可制作简历<span class="surPlusResNum">0</span>份</li>
+
+                        </ul>
+
+
+                    </div>
+                    <div class="shop_top " style="border-radius: 4px">
+                        <ul class="shop_top_left pull-left">
+                            <li class="shop_search"><span class="order_status">已支付订单</span>
+                                <span class="caret" style="color:#333"></span>
+                            </li>
+                            <li class="vip_img"><img src="" alt=""></li>
+                        </ul>
+                        <ul class="shop_top_right shop_top_right1 pull-right">
+                            <li>付款金额</li>
+                            <span style="color: #ccc">|</span>
+                            <li>订单状态</li>
+                            <span class="pull-right" style="color: #ccc">|</span>
+                            <li style="">购买时间</li>
+                            <span class="pull-right" style="color: #ccc">|</span>
+                            <li>操作</li>
+                        </ul>
+                    </div>
+                    <div id="shop_down">
+                        <ul class="shop_down">
+                            <li class="all_order">全部订单</li>
+                            <li class="success_order">已支付订单</li>
+                            <li class="unfinished_order">未支付订单</li>
+                        </ul>
+                        <div class="pany">
+                            <i class="panyTriang"></i>
+                            <i class="panyTriangle-u"></i>
+                        </div>
+                    </div>
+                    <div class="shop_allList">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gotop" title="返回顶部"></div>
+</div>
+<script src="../Js/jquery-2.2.3.min.js"></script>
+<script src="../Js/bootstrap.min.js"></script>
+<script src="../Js/capabhead.js"></script>
+<script src="../Js/UserCenterManage/resumeOrder.js"></script>
+<script>
+    // 加载头部和侧边
+    $(document).ready(function () {
+        usersload()
+        $(".left-bar").load("../UserCenterManage/left-bar.html")
+    })
+    $(window).on('load', function () {
+        $('.sidebar-menu li:nth-of-type(4)').addClass('active-curr')
+    })
+</script>
+</body>
+</html>

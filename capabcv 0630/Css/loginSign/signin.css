@@ -1,0 +1,260 @@
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sign-cv {
+    padding-top: 50px;
+}
+
+.sign-content {
+    background: #fff;
+    height: auto;
+    border-radius: 5px;
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+.sign-nav > a {
+    display: inline-block;
+}
+
+.sign-nav > a > img {
+    height: 24px;
+}
+
+.sign-nav span::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    width: 1px;
+    height: 14px;
+    margin-top: -4px;
+    background: #666666;
+    margin-left: 20px;
+}
+
+.sign-nav .sign-btn-color {
+    color: #ff7561;
+    /*margin-left: 20px;*/
+}
+
+.sign-nav > span {
+    margin-right: 20px;
+}
+
+.sign-title {
+    background-color: #fb5b45;
+    color: #fff;
+    padding: 12px;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.sign-main {
+    padding: 40px 20px;
+    /*width: 390px;*/
+    /*background: #fff;*/
+
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.sign-main .form-group input {
+    height: 40px;
+    background: #f4f4f4;
+
+}
+
+.sign-main .form-group .phone_yzm {
+    width: 100px;
+    float: left;
+    margin-right: 15px;
+
+}
+
+.form-control:focus {
+    /*border-color: #ccc;*/
+    background: #fff;
+}
+
+.sign-main .form-group .sms-cd-btn {
+    float: left;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+.err-msg {
+    display: none;
+    font-size: 12px;
+    color: #f75234;
+    position: relative;
+    top: -8px;
+}
+
+.sign-yzm, .sign-pass {
+    display: none;
+}
+
+.sign-pass {
+    position: relative;
+}
+
+.sign-pass .pass-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    vertical-align: middle;
+    zoom: 1;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.vericode-icon {
+
+    background: url('../../Images/vericodepass.png') center no-repeat;
+}
+
+.disable-icon {
+
+    background: url('../../Images/disabledpass.png') center no-repeat;
+}
+
+.check-cd {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.check-cd .check-c {
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+
+.check-cd > a {
+    margin-left: 5px;
+    color: #fb5b45;
+}
+
+.yzm-curr {
+    background: #ff7561 !important;
+    color: #fff !important;
+    border-color: transparent !important;
+}
+
+.yzm-curr:hover {
+    background: #fb5b45 !important;
+}
+
+.form-tip-msg {
+    font-size: 12px;
+    color: #f75234;
+}
+
+.sign-sub {
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    line-height: 38px;
+    color: #9c9c9c;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.third-party-covers {
+    margin-top: 30px;
+    line-height: 30px;
+
+}
+
+.third-party-covers > span {
+    float: left;
+    color: #999999;
+    margin-right: 20px;
+}
+
+.third-party-covers .pass-account-covers {
+    float: left;
+}
+
+.third-party-covers .pass-account-covers a {
+    display: inline-block;
+    margin-right: 15px;
+
+}
+
+.third-party-covers .pass-account-covers a img {
+    width: 30px;
+}
+
+.sign-main-title {
+    font-size: 20px;
+    line-height: 20px;
+    color: #333333;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.get-yzm {
+    display: none;
+}
+
+/*报错弹框*/
+
+.errorBox {
+    display: none;
+    z-index: 10000;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 12px;
+}
+
+.errorBox img {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+}
+
+.errorBox p {
+    display: inline-block;
+    margin-left: 0px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cover {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background-color: #000;
+    opacity: 0.7;
+}

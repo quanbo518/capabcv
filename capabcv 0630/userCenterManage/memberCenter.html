@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>会员中心</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fonts/cv3.0/icon-font.css">
+    <link rel="stylesheet" href="../Css/StyleGlobal.css">
+    <link rel="stylesheet" href="../Css/headandfoot.css">
+    <link rel="stylesheet" href="../Css/userCenterManage/memberCenter.css">
+
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<style>
+    .active-curr{
+        background: #f2f2f2;
+        border-left: 3px solid #ff7561;
+    }
+</style>
+<body style="background: #f4f4f4">
+<!--//导航-->
+<div id="head" style="z-index:9999">
+    <div id="top" style="height:50px;">
+        <header id="header">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container" >
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3 col-sm-4">
+                            <div class="navbar-header header_logo">
+                                <a href="http://www.capabcv.com" class="navbar-brand"><img src="/Images/LOGO.png" style="height:20px;" alt="logo" /></a>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-7 col-sm-6 nav_list">
+                            <div id="capabmenu" class="collapse navbar-collapse navbar-right" style="width:100%";>
+                                <div class="col-lg-2 col-md-2 col-sm-0"></div>
+                                <ul class="nav navbar-nav" style="margin:0 auto">
+                                    <li><a href="/">首页</a></li>
+                                    <!--<li><a href="/Test/TestIndex.aspx">自我测评</a></li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            综合服务
+                                            <i class="iconfont icon-xiala icon_down"></i>
+                                        </a>
+                                        <a href="/Company/CompanyList.aspx?pagen=1">发现公司</a>
+                                    </li>
+                                    <li class="hidden-sm"><a href="/Library.aspx">职场建议</a></li>
+                                    <li class="hidden-sm"><a href="/Company/Companyjobsearch.aspx">热招职位</a></li>-->
+                                    <li><a href="/resumev2/formchoice.aspx?Reback=0&T=&Classify=&sCharacteristic=&stamp=">在线简历</a></li>
+                                    <li><a href="/resumedownloadlist/template">简历模板</a></li>
+                                    <li><a href="/resumecase">简历范文</a></li>
+                                    <li><a href="/resumearticle">求职攻略</a></li>
+                                    <li><a href="http://www.capablist.com/category/header.html?tags=职业" target="_blank">职业生涯</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 nav_list">
+                            <div class="collapse navbar-collapse" style="width:100%">
+                                <div class="nav navbar-nav navbar-right" style="width:100%">
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="text-align: center;">
+
+                                    </div>
+                                    <div id="userinfohead" class="col-lg-6 col-md-6 col-sm-6" style=" text-align: center;">
+                                        <div class='dropdown user_dropdown'><span class='iconfont icon-user nav_user dropdown-toggle' id="dLabel" data-toggle="dropdown"></span><ul class='dropdown-menu user_downlist' role='menu' aria-labelledby='dLabel'><li><a href='/SimpReglog.aspx?ingate=1&stamp=&Reurl=&T=' class='iconfont icon-zhuye'>登录领贤</a></li><li><a href='/userpassback.aspx' target='_blank' class='iconfont icon-jianliguanli'>找回密码</a></li></ul></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!--
+			<section id="exploreMeu" class="hidden-xs">
+				<div class="container">
+					<div class="img_wrap" style="width: 758px;">
+						<a href="/Company/CompanyDefault.aspx?nId=2"><img src="/Images/explore1.jpg" alt="explore" class="img-responsive"></a>
+						<a href=""><img src="/Images/explore2.jpg" alt="explore" class="img-responsive"/></a>
+						<a href=""><img src="/Images/explore3.jpg" alt="explore" class="img-responsive"/></a>
+					</div>
+				</div>
+				<div class="explorebar"></div>
+			</section>	-->
+        </header>
+        <!--点击探索发现出现下拉框-->
+        <section id="explorebox"></section>
+    </div>
+</div>
+<div class="container main">
+
+            <div class="left-bar"></div>
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12 pull-right container-main">
+        <div class="container-right">
+           <div class="member-title"><span>会员中心</span></div>
+            <div class="member-center">
+            <div class="">
+                <p class="item-title"><span>成为领贤会员</span></p>
+                <div class="pay-all clearfix">
+                    <div class="pay-list">
+                        <div class="pay-content">
+                            <p>3个月<span class="pay-money">19.8</span>元</p>
+                            <p>(仅需6.6元/月)</p>
+                        </div>
+                        <a href="http://www.capabcv.com/payit/PayCreate.aspx" class="pay-btn">立即续费</a>
+                    </div>
+                    <div class="pay-list">
+                        <div class="pay-content">
+                            <p>6个月<span class="pay-money">30</span>元</p>
+                            <p>(仅需5元/月)</p>
+                        </div>
+                        <a href="http://www.capabcv.com/payit/PayCreate.aspx" class="pay-btn">升级会员</a>
+                    </div>
+                    <div class="pay-list">
+                        <div class="pay-content">
+                            <p>12个月<span class="pay-money">35.88</span>元</p>
+                            <p>(仅需2.99元/月)</p>
+                        </div>
+                        <a href="http://www.capabcv.com/payit/PayCreate.aspx" class="pay-btn">升级会员</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="item-title"><span>会员享有以下特权</span></p>
+                    <ul class=" icon-all clearfix">
+                        <li><img src="../Images/userCenterMangage/01.png" alt="">
+                            <p>WORD简历</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/02.png" alt="">
+                            <p>PPT</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/03.png" alt="">
+                            <p>PDF导出</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/04.png" alt="">
+                            <p>简历表格</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/05.png" alt="">
+                            <p>简历下载</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/06.png" alt="">
+                            <p>分享转载</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/07.png" alt="">
+                            <p>个性简历</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/08.png" alt="">
+                            <p>在线发送</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/09.png" alt="">
+                            <p>会员专享</p>
+                        </li>
+                        <li><img src="../Images/userCenterMangage/10.png" alt="">
+                            <p>就业指导</p>
+                        </li>
+                    </ul>
+                <div class="member-text clearfix">
+                    <div class="pull-left">
+                        <p><i class="icon-duigou"></i>WORD PPT 英文简历模板，简历表，自荐信，全站模板免费下载</p>
+                        <p><i class="icon-duigou"></i>全站精美封面任意使用</p>
+                    </div>
+                    <div class="pull-right">
+                        <p><i class="icon-duigou"></i>在线简历生成保存无上限</p>
+                        <p><i class="icon-duigou"></i>会员有效期全部免费使用</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-box">
+                <p class="item-title"><span>会员记录</span></p>
+                <table class="table">
+                    <thead>
+                    <tr class="active">
+                        <th>操作时间</th>
+                        <th>会员有效期</th>
+                        <th>会员类型</th>
+                    </tr>
+                    </thead>
+                    <tbody class="pay-box">
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+            </div>
+    </div>
+    <div id="gotop" title="返回顶部"></div>
+</div>
+<script src="../Js/jquery-2.2.3.min.js"></script>
+<script src="../Js/bootstrap.min.js"></script>
+<script src="../Js/capabhead.js"></script>
+<script src="../Js/UserCenterManage/memberCenter.js"></script>
+<script>
+    // 加载头部和侧边
+    $(document).ready(function () {
+        usersload();
+        $(".left-bar").load("../UserCenterManage/left-bar.html")
+    })
+    $(window).on('load',function(){
+        $('.sidebar-menu li:last-child').addClass('active-curr')
+    })
+</script>
+</body>
+</html>

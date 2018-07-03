@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="../Css/UserCenterManage/left-bar.css">
+<div class="cv-sidebar">
+<div class="sidebar-top" id="">
+    <div class="img-box" style="">
+        <a href="" class="user-author"><img class="user-head " id="user_img" alt="" src="../Images/userPhoto.png"></a>
+    </div>
+    <div class="profile-username text-center"><a id="people_nick">领小贤</a></div>
+    <div></div>
+    <div class="btn-upgrade"><a href="http://www.capabcv.com/payit/PayCreate.aspx" class="btn-member">升级会员</a></div>
+
+</div>
+    <div class="sidebar-main">
+        <ul class="sidebar-menu">
+            <li class="menu-list"><i class="icon icon-1"></i><a href="./userInfoEdit.html">个人信息</a></li>
+            <li class="memo-list"><i class="icon icon-2"></i><a href="./myresume.html">在线简历</a></li>
+            <li class="memo-list"><i class="icon icon-6"></i><a href="./myresume.html?download=do">下载简历</a></li>
+            <li class="memo-list"><i class="icon icon-3"></i><a href="./resumeOrder.html">订单中心</a></li>
+            <li class="memo-list"><i class="icon icon-4"></i><a href="./memberCenter.html">会员中心</a></li>
+
+        </ul>
+
+    </div>
+    <div class="sidebar-bottom"><i class="icon icon-5"></i><a href="javascript:;" class="outLogin">退出登录</a></div>
+</div>
+<script src="../Js/UserCenterManage/left-bar.js"></script>
+<script>
+    $(document).ready(function () {
+        $.post("/UsersV2.ashx?useraction=userload", { "nId": "0" }, function (data, status) {
+            if (status == "success") {
+                userinfoarr = data.split("|");
+                if (userinfoarr[0] == "0") {
+                }
+                else {
+                    alert("登录信息过期 请重新登录");
+                    location.href = "http://www.capablist.com/Regandlog.aspx?ingate=1&stamp=&Reurl=&T=";
+                }
+            }
+        });
+    });
+</script>
+
+
+
