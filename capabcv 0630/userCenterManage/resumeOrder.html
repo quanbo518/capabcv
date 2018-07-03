@@ -6,9 +6,9 @@
     <title>订单中心</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="../Css/bootstrap.min.css">
-    <link rel="stylesheet" href="../fonts/cv3.0/icon-font.css">
     <link rel="stylesheet" href="../Css/StyleGlobal.css">
     <link rel="stylesheet" href="../Css/headandfoot.css">
+    <link rel="stylesheet" href="../Css/plugin/iconfont.css">
     <link rel="stylesheet" href="../Css/UserCenterManage/resumeOrder.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,10 +18,12 @@
     <![endif]-->
 </head>
 <style>
+    .active-curr{
+        background: #f2f2f2;
+    }
     .active-curr::before {
         position: absolute;
         content: "";
-        background: #f2f2f2;
         border-left: 3px solid #ff7561;
     }
 </style>
@@ -117,8 +119,6 @@
 </div>
 
 <div class="container main">
-
-
     <div class="left-bar"></div>
     <div class="row">
         <div class="col-md-9 col-sm-9 col-xs-12 container-main pull-right">
@@ -131,16 +131,12 @@
                             </li>
                             <li class="vip_img"><span class="vip-title"></span></li>
                         </ul>
-
-
                         <ul class="shop_top_right pull-right">
                             <li>已下载<span class="downNum">0</span>份</li>
                             <li>剩余下载<span class="surplusDownNum">0</span>份</li>
                             <li style="">已制作简历<span class="finish-resume">0</span>份</li>
                             <li style="">可制作简历<span class="surPlusResNum">0</span>份</li>
-
                         </ul>
-
 
                     </div>
                     <div class="shop_top " style="border-radius: 4px">
@@ -190,7 +186,7 @@
         $(".left-bar").load("../UserCenterManage/left-bar.html")
     })
     $(window).on('load', function () {
-        // $('.sidebar-menu li:nth-of-type(4)').addClass('active-curr')
+        $('.sidebar-menu li:nth-of-type(4)').addClass('active-curr')
     })
 </script>
 </body>

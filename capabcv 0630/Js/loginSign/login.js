@@ -7,8 +7,8 @@ $(function () {
     }
   var ReUrl=GetQueryString('ReUrl')
 var loginType=GetQueryString('loginType')
-if(passType!=null){
-        if(passType=='pwd'){
+if(loginType!=null){
+        if(loginType=='pwd'){
             $('.log-write').show();
             $('.log-quick').hide()
             $('.icon-btn ').removeClass('icon-pc').addClass('icon-weixin')
