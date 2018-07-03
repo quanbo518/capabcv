@@ -7,7 +7,6 @@ $(function () {
     }
     var nUId = "";
     var download = GetQueryString('download');
-
     /*
      $('.myresume-tab ul ').on('click', 'li', function () {
      $(this).addClass('li-curr').siblings().removeClass('li-curr');
@@ -52,7 +51,7 @@ $(function () {
                         $('.down').show().addClass('li-curr');
                         $('.online').hide()
                     }
-                }else{
+                } else {
                     online();
                     $('.sidebar-menu li:nth-of-type(2)').addClass('active-curr');
                     $('.online-resume').show();
@@ -114,14 +113,19 @@ $(function () {
                     }
                 }
                 $('.downResNum').html(downLen.length);
-                if (!down_list) {
+               /* if (!down_list) {
                     down_list = '<div style="width:100%;text-align: center;font-size: 18px;margin-top: 50px;color:#999;">你还未下载该模板简历,快去下载吧</div>'
-                }
+                }*/
                 $('.resume-content').html(down_list)
+            },
+            error:function () {
+               $('.resume-content ').html('<div style="width:100%;text-align: center;font-size: 18px;margin: 50px 0;color:#999;">你还未下载该模板简历,快去下载吧</div>')
+
             }
 
         })
     }
+
     var newArr = ['', 'ppt', 'word', 'wordeng', 'table', 'mail'];
     $('.shop_down li').each(function (i) {
         $(this).click(function () {
@@ -129,6 +133,7 @@ $(function () {
             down_list(newArr[i])
         })
     });
+
     function online() {
         var resumeData;
         $.ajax({
@@ -184,13 +189,11 @@ $(function () {
         localStorage.removeItem('resumenId');
         localStorage.setItem('resumenId', $(this).attr('data-nId'));
         console.log(localStorage.getItem('resumenId'));
-
         /*  var time = setTimeout(function(){
          localStorage.removeItem('resumenId');
          clearTimeout(time);
          console.log(localStorage.getItem('resumenId'));
          },10000);*/
-
         window.location.href = 'http://www.capabcv.com/resumev2/resumetool.aspx';
         //     cookie.set('nId',$(this).attr('data-nId'),1)
     });
@@ -202,7 +205,6 @@ $(function () {
     $('.resume-box').on('click', '#new_resume', function () {
         addResume('15_9')
     })
-
     $('.online-resume').on('click', '.cv_name_edit', function () {
         $(this).siblings('.cv_name').attr('contenteditable', 'true').css('border', '1px solid #ddd')
 

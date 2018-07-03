@@ -79,6 +79,7 @@ a {
 }
 .sidebar-menu li {
     /*padding: 0 20px 0 40px;*/
+    position: relative;
     height: 50px;
     line-height: 50px;
 }
@@ -131,7 +132,9 @@ border-left:3px solid #ff7561;
     vertical-align: middle;
 
 }
-.active-curr {
+.active-curr::before {
+    content: "";
+    height: 100%;
     background: #f2f2f2;
     border-left: 3px solid #ff7561;
 }

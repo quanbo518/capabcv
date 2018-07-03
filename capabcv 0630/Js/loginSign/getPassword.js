@@ -20,13 +20,14 @@ $(function () {
                         '<a href="http://www.capabcv.com" type="button"  class="sign-sub yzm-curr" style="display: inline-block;font-size: 16px;">进入领贤简历</a>' +
                         '</div>')
                 }
-            }else{
+            }
+           /* else{
                 $('.sign-main').html(' <div class="sign-main-title"></div>' +
                     '<p class="" style="text-align: center;margin-bottom: 20px;font-size: 16px;">对不起你无权访问该网页</p>' +
                     '<div class="passcard-btns register-btn">' +
                     '<a href="http://www.capabcv.com" type="button"  class="sign-sub yzm-curr" style="display: inline-block;font-size: 16px;">进入领贤简历</a>' +
                     '</div>')
-            }
+            }*/
     $('.login-btn').on('click', function () {
         localStorage.removeItem('typeLogIn');
         localStorage.setItem('typeLogIn', 'passId');

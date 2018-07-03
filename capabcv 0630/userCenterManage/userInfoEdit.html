@@ -18,7 +18,10 @@
     <![endif]-->
 </head>
 <style>
-    .active-curr {
+    .active-curr::before {
+        position: absolute;
+        content: "";
+        height: 100%;
         background: #f2f2f2;
         border-left: 3px solid #ff7561;
     }
@@ -36,12 +39,15 @@
     <div id="top" style="height:50px;">
         <header id="header">
             <nav class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container" >
+                <div class="container">
                     <div class="row">
                         <div class="col-lg-2 col-md-3 col-sm-4">
                             <div class="navbar-header header_logo">
-                                <a href="http://www.capabcv.com" class="navbar-brand"><img src="/Images/LOGO.png" style="height:20px;" alt="logo" /></a>
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <a href="http://www.capabcv.com" class="navbar-brand"><img src="/Images/LOGO.png"
+                                                                                           style="height:20px;"
+                                                                                           alt="logo"/></a>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target=".navbar-collapse">
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -50,7 +56,7 @@
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-7 col-sm-6 nav_list">
-                            <div id="capabmenu" class="collapse navbar-collapse navbar-right" style="width:100%";>
+                            <div id="capabmenu" class="collapse navbar-collapse navbar-right" style="width:100%" ;>
                                 <div class="col-lg-2 col-md-2 col-sm-0"></div>
                                 <ul class="nav navbar-nav" style="margin:0 auto">
                                     <li><a href="/">首页</a></li>
@@ -64,11 +70,14 @@
                                     </li>
                                     <li class="hidden-sm"><a href="/Library.aspx">职场建议</a></li>
                                     <li class="hidden-sm"><a href="/Company/Companyjobsearch.aspx">热招职位</a></li>-->
-                                    <li><a href="/resumev2/formchoice.aspx?Reback=0&T=&Classify=&sCharacteristic=&stamp=">在线简历</a></li>
+                                    <li>
+                                        <a href="/resumev2/formchoice.aspx?Reback=0&T=&Classify=&sCharacteristic=&stamp=">在线简历</a>
+                                    </li>
                                     <li><a href="/resumedownloadlist/template">简历模板</a></li>
                                     <li><a href="/resumecase">简历范文</a></li>
                                     <li><a href="/resumearticle">求职攻略</a></li>
-                                    <li><a href="http://www.capablist.com/category/header.html?tags=职业" target="_blank">职业生涯</a></li>
+                                    <li><a href="http://www.capablist.com/category/header.html?tags=职业" target="_blank">职业生涯</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -78,8 +87,19 @@
                                     <div class="col-lg-6 col-md-6 col-sm-6" style="text-align: center;">
 
                                     </div>
-                                    <div id="userinfohead" class="col-lg-6 col-md-6 col-sm-6" style=" text-align: center;">
-                                        <div class='dropdown user_dropdown'><span class='iconfont icon-user nav_user dropdown-toggle' id="dLabel" data-toggle="dropdown"></span><ul class='dropdown-menu user_downlist' role='menu' aria-labelledby='dLabel'><li><a href='/SimpReglog.aspx?ingate=1&stamp=&Reurl=&T=' class='iconfont icon-zhuye'>登录领贤</a></li><li><a href='/userpassback.aspx' target='_blank' class='iconfont icon-jianliguanli'>找回密码</a></li></ul></div>
+                                    <div id="userinfohead" class="col-lg-6 col-md-6 col-sm-6"
+                                         style=" text-align: center;">
+                                        <div class='dropdown user_dropdown'><span
+                                                class='iconfont icon-user nav_user dropdown-toggle' id="dLabel"
+                                                data-toggle="dropdown"></span>
+                                            <ul class='dropdown-menu user_downlist' role='menu'
+                                                aria-labelledby='dLabel'>
+                                                <li><a href='/SimpReglog.aspx?ingate=1&stamp=&Reurl=&T='
+                                                       class='iconfont icon-zhuye'>登录领贤</a></li>
+                                                <li><a href='/userpassback.aspx' target='_blank'
+                                                       class='iconfont icon-jianliguanli'>找回密码</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -103,181 +123,199 @@
         <section id="explorebox"></section>
     </div>
 </div>
-
 <div class="container main">
 
-        <!--//左侧-->
-            <div class="left-bar"></div>
-        <div class="row">
-<div class="col-md-9 col-sm-8 col-xs-12 container-main pull-right">
-        <div class="container-right ">
-            <div class="basic">
-                <div class="basic-top">
-                    <span>个人信息</span>
-                </div>
-                <div class="basic-list clearfix">
-                    <div class="basic-title title-left">个人信息</div>
-                    <a type="button" class="btn-editor pull-right">编辑</a>
-                    <div class="out-box">
-                        <div class="inner-content">
-                            <form action="">
-                                <div class="form-group clearfix">
-                                    <div class="title-type">昵称：</div>
-                                    <div class="col-md-10 col-sm-9 col-xs-12 nick">
-                                        <input type="text" name="" class="form-control" id="nickName" placeholder="请填写昵称">
-                                        <span class="nick-num"><i class="curr-num">0</i>/<i class="total-num">15</i></span>
-                                        <p class="points-write" style="display: none;">描述不能多于15个字！</p>
-                                    </div>
-                                </div>
-                                <div class="form-group clearfix">
-                                    <div class="title-type">性别：</div>
-                                    <div class="col-md-10 col-xs-12">
-                                        <label class="mr15"><input type="radio" name="sex" value="男" id="male">男</label>
-                                        <label><input type="radio" name="sex" value="女" id="female">女</label>
-                                    </div>
-                                </div>
-                                <div class="form-group clearfix">
-                                    <div class="title-type">个人描述:</div>
-                                    <div class=" col-md-10 col-xs-12 memo">
-                                        <textarea class="form-control"  rows="6" id="usermemo"></textarea>
-                                        <span class="memo-num"><i class="curr-num">0</i>/<i class="total-num">200</i></span>
-                                        <p class="points-write" style="display: none;">描述不能多于200字！</p>
-                                    </div>
-                                </div>
-                                <div class="form-group clearfix" style="padding-top: 10px;">
-                                    <div class="title-type">个人主页:</div>
-                                    <div class="col-md-10 col-xs-12">
-                                    <input type="text" name="" class="form-control " id="userlink">
-                                    </div>
-                                </div>
-                                <a type="button" class="btn phone-btn" id="saveMsg" ><span>保存</span></a>
-                            </form>
+    <!--//左侧-->
+    <div class="left-bar"></div>
+    <div class="row">
+        <div class="col-md-9 col-sm-8 col-xs-12 container-main pull-right">
+            <div class="container-right ">
+                <div class="basic">
+                    <div class="basic-top">
+                        <span>个人信息</span>
+                    </div>
+                    <div class="basic-list clearfix">
+                        <div class="basic-title title-left">个人信息
+                            <div class="preview userNick"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="basic-list clearfix">
-                    <div class="basic-title title-left">头像
-                        <div class="preview"><img src="" class="userPhoto"></div>
-                    </div>
-                    <a type="button" class="btn-editor pull-right">编辑</a>
-                    <div class="out-box">
-                        <div class="inner-content">
-                            <img src="../Images/regandlog.png" alt=""  class="photo-cont" style="width: 150px;height: 150px;">
-                            <button class="up-img" style="margin-left: 50px;">上传头像</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="basic-list clearfix">
-                    <div class="basic-title title-left">绑定手机
-                        <div class="preview bind-phone">未绑定</div>
-                    </div>
-                    <a type="button" class="btn-editor pull-right">编辑</a>
-                    <div class="out-box">
-                        <div class="inner-content">
-                            <form action="">
-                                <div class="form-group clearfix no-bind">
-                                    <div class="title-type">手机号码:</div>
-                                    <div class="col-md-10 col-xs-12">
-                                        <input type="text" maxlength="11"  class="form-control" id="userphone" placeholder="请输入手机号码">
-                                       <span class="err-msg"></span>
-                                        <div class="bind-yzm clearfix">
-                                            <input type="text" class="phone_yzm form-control " id="InputYzmT" placeholder="输入验证码" value="" maxlength="4">
-                                            <input type="button" class="sms-cd-btn" id="sms-send-cd-btn" value="发送验证码" disabled="disabled">
+                        <a type="button" class="btn-editor pull-right">编辑</a>
+                        <div class="out-box">
+                            <div class="inner-content">
+                                <form action="">
+                                    <div class="form-group clearfix">
+                                        <div class="title-type">昵称：</div>
+                                        <div class="col-md-10 col-sm-9 col-xs-12 nick">
+                                            <input type="text" name="" class="form-control" id="nickName"
+                                                   placeholder="请填写昵称">
+                                            <span class="nick-num"><i class="curr-num">0</i>/<i class="total-num">15</i></span>
+                                            <p class="points-write" style="display: none;">描述不能多于15个字！</p>
                                         </div>
-                                        <a type="button" class="btn phone-btn" id="bind-tel"><span>绑定手机</span></a>
                                     </div>
-                                </div>
-                                <div class="form-group clearfix success-bind" >
-                                    <div class="title-type" style="width: 80px;">已绑定手机:</div>
-                                    <div class="col-md-10 col-xs-12">
-                                        <div class="tel-num" style="margin-top: 5px;"></div>
-                                        <!--<input type="text" name="" class="form-control" id="userphone" placeholder="请输入手机号码">-->
-                                        <a type="button" class="btn change-phone" style="width: 108px;"><span>更换手机号码</span></a>
+                                    <div class="form-group clearfix">
+                                        <div class="title-type">性别：</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <label class="mr15"><input type="radio" name="sex" value="男"
+                                                                       id="male">男</label>
+                                            <label><input type="radio" name="sex" value="女" id="female">女</label>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="form-group clearfix">
+                                        <div class="title-type">个人描述:</div>
+                                        <div class=" col-md-10 col-xs-12 memo">
+                                            <textarea class="form-control" rows="6" id="usermemo"></textarea>
+                                            <span class="memo-num"><i class="curr-num">0</i>/<i
+                                                    class="total-num">200</i></span>
+                                            <p class="points-write" style="display: none;">描述不能多于200字！</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix" style="padding-top: 10px;">
+                                        <div class="title-type">个人主页:</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <input type="text" name="" class="form-control " id="userlink">
+                                        </div>
+                                    </div>
+                                    <a type="button" class="btn phone-btn" id="saveMsg"><span>保存</span></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basic-list clearfix">
+                        <div class="basic-title title-left">头像
+                            <div class="preview"><img src="" class="userPhoto"></div>
+                        </div>
+                        <a type="button" class="btn-editor pull-right">编辑</a>
+                        <div class="out-box">
+                            <div class="inner-content">
+                                <img src="../Images/regandlog.png" alt="" class="photo-cont"
+                                     style="width: 150px;height: 150px;">
+                                <button class="up-img" style="margin-left: 50px;">上传头像</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basic-list clearfix">
+                        <div class="basic-title title-left">绑定手机
+                            <div class="preview bind-phone">未绑定</div>
+                        </div>
+                        <a type="button" class="btn-editor pull-right">编辑</a>
+                        <div class="out-box">
+                            <div class="inner-content">
+                                <form action="">
+                                    <div class="form-group clearfix no-bind">
+                                        <div class="title-type">手机号码:</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <input type="text" maxlength="11" class="form-control" id="userphone"
+                                                   placeholder="请输入手机号码">
+                                            <span class="err-msg"></span>
+                                            <div class="bind-yzm clearfix">
+                                                <input type="text" class="phone_yzm form-control " id="InputYzmT"
+                                                       placeholder="输入验证码" value="" maxlength="4">
+                                                <input type="button" class="sms-cd-btn" id="sms-send-cd-btn"
+                                                       value="发送验证码" disabled="disabled">
+                                            </div>
+                                            <a type="button" class="btn phone-btn" id="bind-tel"><span>绑定手机</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix success-bind">
+                                        <div class="title-type" style="width: 80px;">已绑定手机:</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <div class="tel-num" style="margin-top: 5px;"></div>
+                                            <!--<input type="text" name="" class="form-control" id="userphone" placeholder="请输入手机号码">-->
+                                            <a type="button" class="btn change-phone"
+                                               style="width: 108px;"><span>更换手机号码</span></a>
+                                        </div>
+                                    </div>
 
-                                <div></div>
-                            </form>
+                                    <div></div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="basic-list clearfix">
-                    <div class="basic-title title-left">绑定邮箱
-                        <div class="preview email-bind">未绑定</div>
-                    </div>
-                    <a type="button" class="btn-editor pull-right">编辑</a>
-                    <div class="out-box">
-                        <div class="inner-content">
-                            <form action="">
-                                <div class="form-group clearfix no-email">
-                                    <div class="title-type">邮箱:</div>
-                                    <div class="col-md-10 col-xs-12">
-                                        <input type="text" name="" class="form-control" id="useremail" placeholder="请输入邮箱">
-                                        <a type="button" class="btn phone-btn" id="bind-email"><span>绑定邮箱</span></a>
+                    <div class="basic-list clearfix">
+                        <div class="basic-title title-left">绑定邮箱
+                            <div class="preview email-bind">未绑定</div>
+                        </div>
+                        <a type="button" class="btn-editor pull-right">编辑</a>
+                        <div class="out-box">
+                            <div class="inner-content">
+                                <form action="">
+                                    <div class="form-group clearfix no-email">
+                                        <div class="title-type">邮箱:</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <input type="text" name="" class="form-control" id="useremail"
+                                                   placeholder="请输入邮箱">
+                                            <a type="button" class="btn phone-btn" id="bind-email"><span>绑定邮箱</span></a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group clearfix success-email">
-                                    <div class="title-type" style="width: 100px;">已绑定邮箱:</div>
-                                    <div class="col-md-10 col-xs-12">
-                                        <div class="email-name" style="margin-top: 7px;"></div>
-                                        <a type="button" class="btn phone-btn" id="change-email"><span>修改邮箱</span></a>
+                                    <div class="form-group clearfix success-email">
+                                        <div class="title-type" style="width: 100px;">已绑定邮箱:</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <div class="email-name" style="margin-top: 7px;"></div>
+                                            <a type="button" class="btn phone-btn"
+                                               id="change-email"><span>修改邮箱</span></a>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="basic-list clearfix">
-                    <div class="basic-title title-left">密码设置
-                        <div class="preview">******</div>
-                    </div>
-                    <a type="button" class="btn-editor pull-right">编辑</a>
-                    <div class="out-box">
-                        <div class="inner-content">
-                            <form action="">
-                                <div class="form-group clearfix">
-                                    <div class="title-type">当前密码:</div>
-                                    <div class="col-md-10 col-xs-12">
-                                        <input type="password" name="" class="form-control" id="oldPass" placeholder="请输入密码">
+                    <div class="basic-list clearfix">
+                        <div class="basic-title title-left">密码设置
+                            <div class="preview">******</div>
+                        </div>
+                        <a type="button" class="btn-editor pull-right">编辑</a>
+                        <div class="out-box">
+                            <div class="inner-content">
+                                <form action="">
+                                    <div class="form-group clearfix">
+                                        <div class="title-type">当前密码:</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <input type="password" name="" class="form-control" id="oldPass"
+                                                   placeholder="请输入密码">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group clearfix">
-                                    <div class="title-type">新密码:</div>
-                                    <div class="col-md-10 col-xs-12">
-                                        <input type="password" name="" class="form-control" id="newPass" placeholder="请输入密码">
-                                        <p class="points-write pass-msg" style="display: none;">大写字母、小写字母、数字和标点符号至少包含2种长度6-20</p>
-                                        <a type="button" class="btn phone-btn" id="passSave" style="margin-top: 25px;"><span>保存</span></a>
+                                    <div class="form-group clearfix">
+                                        <div class="title-type">新密码:</div>
+                                        <div class="col-md-10 col-xs-12">
+                                            <input type="password" name="" class="form-control" id="newPass"
+                                                   placeholder="请输入密码">
+                                            <p class="points-write pass-msg" style="display: none;">
+                                                大写字母、小写字母、数字和标点符号至少包含2种长度6-20</p>
+                                            <a type="button" class="btn phone-btn" id="passSave"
+                                               style="margin-top: 25px;"><span>保存</span></a>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="basic-list clearfix">
-                    <div class="basic-title title-left">第三方账号绑定
-                        <div class="preview">
-                            <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wxf509a9c10fba6030&amp;redirect_uri=http%3a%2f%2fwww.capabcv.com%2FFlashlogin%2Fweixinredirect.ashx?Reurl=&amp;response_type=code&amp;scope=snsapi_login&amp;state=awen#wechat_redirect"><img src="../Images/Resumev2/onlinepreview/fxWeixin.png" alt=""></a>
+                    <div class="basic-list clearfix">
+                        <div class="basic-title title-left">第三方账号绑定
+                            <div class="preview">
+                                <a href="https://open.weixin.qq.com/connect/qrconnect?appid=wxf509a9c10fba6030&amp;redirect_uri=http%3a%2f%2fwww.capabcv.com%2FFlashlogin%2Fweixinredirect.ashx?Reurl=&amp;response_type=code&amp;scope=snsapi_login&amp;state=awen#wechat_redirect"><img
+                                        src="../Images/Resumev2/onlinepreview/fxWeixin.png" alt=""></a>
+                            </div>
                         </div>
-                    </div>
-                    <a type="button" class="btn-editor pull-right">编辑</a>
-                    <div class="out-box">
-                        <div class="inner-content">
-                            <form action="">
-                                <div class="form-group clearfix">
-                                    <div class="title-type"><img src="../Images/ResumeV2/onlinepreview/fxWeixin.png" alt=""></div>
-                                    <div class="col-md-10 col-xs-12">
+                        <a type="button" class="btn-editor pull-right">编辑</a>
+                        <div class="out-box">
+                            <div class="inner-content">
+                                <form action="">
+                                    <div class="form-group clearfix">
+                                        <div class="title-type"><img src="../Images/ResumeV2/onlinepreview/fxWeixin.png"
+                                                                     alt=""></div>
+                                        <div class="col-md-10 col-xs-12">
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <!--上传头像弹框-->
-    <div class="modal fade in" data-backdrop="static" data-keyboard="false" id="photoModal" tabindex="-1" role="dialog" aria-hidden="true" >
+    <div class="modal fade in" data-backdrop="static" data-keyboard="false" id="photoModal" tabindex="-1" role="dialog"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -310,8 +348,9 @@
         usersload()
         $(".left-bar").load("../UserCenterManage/left-bar.html");
     })
+
     $(window).on('load', function () {
-        $('.sidebar-menu li:first-child').addClass('active-curr')
+        $('.sidebar-menu>li:first-child').addClass('active-curr')
     })
 </script>
 </body>

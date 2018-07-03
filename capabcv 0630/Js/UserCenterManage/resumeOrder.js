@@ -18,6 +18,7 @@ $(function () {
             },
             error: function () {},
             complete:function () {
+                $('.sidebar-menu li:nth-of-type(4)').addClass('active-curr')
                 orderList('0');
                 downResumeNum();
                 finishResume();

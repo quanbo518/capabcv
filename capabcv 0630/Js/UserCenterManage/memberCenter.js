@@ -14,6 +14,7 @@ $(function () {
             error: function () {
             },
             complete: function () {
+                $('.sidebar-menu li:last-child').addClass('active-curr')
                 orderList();
             }
         });
@@ -68,10 +69,10 @@ $(function () {
                                 }
                                 // console.log(new Date(successArr[k].dtInTime).getTime()+100*24);
                                 orderStr += '<tr>' +
-                                    '                        <td>' + successArr[k].dtInTime + '</td>' +
-                                    '                        <td>' + newTime(successArr[k].dtInTime, timeNum) + '</td>' +
-                                    '                        <td>' + type + '</td>' +
-                                    '                    </tr>'
+                                    '<td>' + successArr[k].dtInTime + '</td>' +
+                                    ' <td>' + newTime(successArr[k].dtInTime, timeNum) + '</td>' +
+                                    '<td>' + type + '</td>' +
+                                    ' </tr>'
                             }
                             $('.pay-box').append(orderStr)
                         }

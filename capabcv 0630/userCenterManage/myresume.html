@@ -22,7 +22,10 @@
 </head>
 
 <style>
-    .active-curr {
+    .active-curr::before {
+        position: absolute;
+        content: "";
+        height: 100%;
         background: #f2f2f2;
         border-left: 3px solid #ff7561;
     }
