@@ -35,7 +35,7 @@ $(function () {
             },
             complete: function () {
                 var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
-                $('.sidebar-menu li:first-child').addClass('active-curr')
+                $('.sidebar-menu .menu-list:first-child').addClass('active-curr')
                 if (loginData) {
                     $('#nickName').val(loginData.sNick);
                     $('.userNick').val(loginData.sNick);

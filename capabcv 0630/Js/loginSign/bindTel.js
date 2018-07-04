@@ -8,7 +8,7 @@ $(function () {
         return null;
     }
     var sTel='';
-    var Reurl=GetQueryString('Reurl')
+    var Reurl=GetQueryString('Reurl');
     login()
     function login() {
         $.ajax({
@@ -26,7 +26,13 @@ $(function () {
             complete: function () {
                 var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
                 if(log_pho.test(sTel)){
-                  window.location.href= Reurl
+                    if(Reurl!=null){
+                        window.location.href= Reurl;
+                        return
+                    }else{
+                        window.location.href= "http://www.capabcv.com"
+                    }
+
                 }
             }
         });

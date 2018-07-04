@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +7,9 @@
     <title>我的简历</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="../Css/bootstrap.min.css">
-    <link rel="stylesheet" href="../fonts/cv3.0/icon-font.css">
     <link rel="stylesheet" href="../Css/StyleGlobal.css">
     <link rel="stylesheet" href="../Css/headandfoot.css">
-    <!--<link rel="stylesheet" href="../Css/font-awesome-common.css">-->
-    <link rel="stylesheet" href="../Css/UserCenterManage/left-bar.css">
+    <link rel="stylesheet" href="../Css/plugin/iconfont.css">
     <link rel="stylesheet" href="../Css/UserCenterManage/myresume.css">
     <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,13 +19,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <style>
+    .active-curr{
+        background: #f2f2f2;
+    }
     .active-curr::before {
         position: absolute;
         content: "";
         height: 100%;
         background: #f2f2f2;
+        left: 0;
         border-left: 3px solid #ff7561;
     }
 </style>
@@ -122,7 +124,6 @@
 </div>
 
 <div class="container main">
-
     <!--//左侧-->
     <div class="left-bar"></div>
     <div class="row">
@@ -188,24 +189,20 @@
         </div>
     </div>
 </div>
-<div id="gotop" title="返回顶部"></div>
-</div>
+
 <script src="../Js/jquery-2.2.3.min.js"></script>
+<script src="../Js/bootstrap.min.js "></script>
 <script src="../Js/capabhead.js"></script>
-<script src="../Js/UserCenterManage/left-bar.js"></script>
-
 <script src="../Js/UserCenterManage/myresume.js"></script>
-
 <script>
     // 加载头部和侧边
     $(document).ready(function () {
         usersload();
-        // pageLoad.load("../UserCenterManage/head-top.html",$(".head_top"))
         $(".left-bar").load("../UserCenterManage/left-bar.html")
     })
 
     $(window).on('load', function () {
-//        $('.sidebar-menu li:nth-of-type(2)').addClass('active-curr')
+
     })
 </script>
 </body>

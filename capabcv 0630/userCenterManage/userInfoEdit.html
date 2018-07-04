@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../Css/lib/cropper.min.css">
     <link rel="stylesheet" href="../Css/StyleGlobal.css">
     <link rel="stylesheet" href="../Css/headandfoot.css">
+    <link rel="stylesheet" href="../Css/plugin/iconfont.css">
     <!--<link rel="stylesheet" href="../Css/font-awesome-common.css">-->
     <link rel="stylesheet" href="../Css/UserCenterManage/userInfo.css">
 
@@ -18,11 +19,15 @@
     <![endif]-->
 </head>
 <style>
+    .active-curr{
+        background: #f2f2f2;
+    }
     .active-curr::before {
         position: absolute;
         content: "";
         height: 100%;
         background: #f2f2f2;
+        left: 0;
         border-left: 3px solid #ff7561;
     }
 </style>
@@ -123,6 +128,7 @@
         <section id="explorebox"></section>
     </div>
 </div>
+
 <div class="container main">
 
     <!--//左侧-->
@@ -337,6 +343,7 @@
     <input type="file" id="headPhoto" class="hidden">
     <div id="gotop" title="返回顶部"></div>
 </div>
+
 <script src="../Js/jquery-2.2.3.min.js"></script>
 <script src="../Js/bootstrap.min.js "></script>
 <script src="../Js/lib/cropper.min.js"></script>
@@ -345,12 +352,12 @@
 <script>
     // 加载头部和侧边
     $(document).ready(function () {
-        usersload()
+        usersload();
         $(".left-bar").load("../UserCenterManage/left-bar.html");
-    })
+    });
 
     $(window).on('load', function () {
-        $('.sidebar-menu>li:first-child').addClass('active-curr')
+//    $('.sidebar-menu .menu-list:first-child').addClass('active-curr')
     })
 </script>
 </body>

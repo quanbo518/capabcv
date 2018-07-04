@@ -43,6 +43,7 @@ a {
     border-radius: 50%;
     overflow: hidden;
     display: block;
+    
 }
 
 .sidebar-top .img-box img {
@@ -77,13 +78,16 @@ a {
     padding: 0;
     position: relative;
 }
-.sidebar-menu li {
-    /*padding: 0 20px 0 40px;*/
+.sidebar-menu .menu-list{
+    padding-left:40px;
     position: relative;
     height: 50px;
     line-height: 50px;
+    display: block;
+    font-size: 16px;
+    color: #333;
 }
-.sidebar-menu li:hover{
+.sidebar-menu .menu-list:hover{
     background: #f2f2f2;
 }
 .list-curr{
@@ -92,15 +96,6 @@ a {
 .hover-curr{
 border-left:3px solid #ff7561;
 }
-.sidebar-menu li a {
-    padding: 0 20px 0 80px;
-    display: inline-block;
-    font-size: 16px;
-    height: 100%;
-    line-height: 50px;
-    color: #666;
-}
-
 .sidebar-bottom{
     position: relative;
     margin-top: 100px;
@@ -113,30 +108,20 @@ border-left:3px solid #ff7561;
 }
 .sidebar-bottom>a{
     line-height: 50px;
+    width: 100%;
     color: #666;
     font-size: 16px;
     display: inline-block;
 }
 
 .icon{
-    /*position: relative;*/
-    position: absolute;
-    left: 40px;
-    /*top:10px;*/
-    margin-top: 17px;
+    margin-right: 15px;
     display: inline-block;
     background:  url('../../Images/userCenterMangage/icon-left.png') ;
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
     vertical-align: middle;
-
-}
-.active-curr::before {
-    content: "";
-    height: 100%;
-    background: #f2f2f2;
-    border-left: 3px solid #ff7561;
 }
 .icon-1{
     background-position: -8px -10px;
@@ -151,6 +136,8 @@ border-left:3px solid #ff7561;
     background-position: -88px -10px;
 }
 .icon-5{
+    position: absolute;
+    top: 17px;
     left: 50px;
     background-position: -112px -10px;
 }
