@@ -5,22 +5,23 @@ $(function () {
         if (r != null) return unescape(r[2]);
         return null;
     }
-
     var nUId = "";
     var download = GetQueryString('download');
-    /*$('.myresume-tab ul ').on('click', 'li', function () {
-    $(this).addClass('li-curr').siblings().removeClass('li-curr');
-    if ($(this).hasClass('online')) {
-    $('.online-resume').show();
-    $('.down-resume').hide();
-    }
-    if ($(this).hasClass('down')) {
-    $('.online-resume').hide();
-    $('.down-resume').show();
-    }
-    });*/
+    /*
+     $('.myresume-tab ul ').on('click', 'li', function () {
+     $(this).addClass('li-curr').siblings().removeClass('li-curr');
+     if ($(this).hasClass('online')) {
+     $('.online-resume').show();
+     $('.down-resume').hide();
+     }
+     if ($(this).hasClass('down')) {
+     $('.online-resume').hide();
+     $('.down-resume').show();
+     }
 
+     });*/
     login();
+
     function login() {
         $.ajax({
             type: "get",
@@ -34,6 +35,7 @@ $(function () {
             error: function () {
             },
             complete: function () {
+                console.log(download);
                 if (download != null) {
                     if (download == 'do') {
                         $('.sidebar-menu li:nth-of-type(3)').addClass('active-curr');
@@ -111,13 +113,13 @@ $(function () {
                     }
                 }
                 $('.downResNum').html(downLen.length);
-                /* if (!down_list) {
-                     down_list = '<div style="width:100%;text-align: center;font-size: 18px;margin-top: 50px;color:#999;">你还未下载该模板简历,快去下载吧</div>'
-                 }*/
+               /* if (!down_list) {
+                    down_list = '<div style="width:100%;text-align: center;font-size: 18px;margin-top: 50px;color:#999;">你还未下载该模板简历,快去下载吧</div>'
+                }*/
                 $('.resume-content').html(down_list)
             },
-            error: function () {
-                $('.resume-content ').html('<div style="width:100%;text-align: center;font-size: 18px;margin: 50px 0;color:#999;">你还未下载该模板简历,快去下载吧</div>')
+            error:function () {
+               $('.resume-content ').html('<div style="width:100%;text-align: center;font-size: 18px;margin: 50px 0;color:#999;">你还未下载该模板简历,快去下载吧</div>')
 
             }
 
@@ -179,7 +181,7 @@ $(function () {
                 $('.resume-box').append(onlineStr)
             }
         })
-    };
+    }
 
 //点击编辑
     $('.online-resume').on('click', '.edit-cv', function (e) {
