@@ -60,7 +60,7 @@
 }
 .iteminer {
     width: 100% ;
-    height: 262px;
+    height: 250px;
     /*background: #f4f4f4;*/
     position: relative;
     margin-bottom: 10px;
@@ -75,7 +75,7 @@
 }
 .coverIner{
     position: relative;
-    height: 262px;
+    height: 250px;
     width: 100%;
     display: none;
 }
@@ -166,20 +166,21 @@ margin-top: 20px;
 }
 .down-resume-list .down-resume-img{
     width: 100%;
-    height: 262px;
+    height: 252px;
     display: block;
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    overflow: hidden;
 
 }
 .down-resume-list a>img{
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
 }
 .hover-bg,.hover-down{
     position: absolute;
     top:0;
     width: 100%;
-    height: 262px;
+    height: 250px;
     background-color: rgba(0,0,0,0.3);
     display: none;
 

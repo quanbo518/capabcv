@@ -111,7 +111,37 @@ i {
 .inner-content {
     padding: 20px 20px 20px 40px;
 }
+.inner-content .photo-box{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.inner-content .photo-box:hover>p{
+    display: block;
+}
 
+.inner-content .photo-box p{
+    position: absolute;
+    background: #ddd;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 150px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    cursor: pointer;
+}
+.inner-content>button{
+    position: relative;
+    top: -65px;
+    border-radius: 4px;
+}
 .title-type {
     height: 34px;
     line-height: 34px;

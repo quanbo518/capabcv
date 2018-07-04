@@ -9,8 +9,7 @@ $(function () {
         success: function (data) {
             // loginerId = data.nId;
             nId = data.nId;
-
-            $('.user-head ').attr('src', data.sPhoto);
+            $('.user-head ').attr('src', data.sPhoto?data.sPhoto:"../Images/userPhoto.png");
             $('#people_nick').html(data.sNick)
         },
         error:function () {
@@ -18,7 +17,6 @@ $(function () {
             window.location.href='http://www.capabcv.com/login.html'
         },
         complete: function () {
-
         }
 
     })

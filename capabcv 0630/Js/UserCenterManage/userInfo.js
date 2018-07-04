@@ -37,6 +37,9 @@ $(function () {
                 var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
                 $('.sidebar-menu .menu-list:first-child').addClass('active-curr')
                 if (loginData) {
+                    var sPhoto=loginData.sPhoto?loginData.sPhoto:"../Images/userPhoto";
+                    // var sPhoto="../Images/userPhoto.png";
+
                     $('#nickName').val(loginData.sNick);
                     $('.userNick').val(loginData.sNick);
                     $('#usermemo').val(loginData.sSelfMemo);
@@ -46,7 +49,7 @@ $(function () {
                     if (loginData.sSex) {
                         $("input[name='sex'][value=" + loginData.sSex + "]").attr("checked", true);
                     }
-                    $('.preview .userPhoto,.photo-cont').attr('src', loginData.sPhoto);
+                    $('.preview .userPhoto,.photo-cont').attr('src', sPhoto);
                     if (log_pho.test(loginData.sTel)) {
                         $('.bind-phone').html(loginData.sTel)
                         $('.tel-num').html(loginData.sTel)
@@ -272,7 +275,7 @@ $(function () {
     photoUpLode()
     //上传头像
     function photoUpLode() {
-        $(".photo-cont,#againUpLoad,.up-img").click(function (e) {
+        $(".photo-change,#againUpLoad,.up-img").click(function (e) {
             $("#photoModal").modal("show");
             $("#imgBox").append(' <p>请上传大小1M以内的JPG、PNG图片</p>');
             $("#headPhoto").click();

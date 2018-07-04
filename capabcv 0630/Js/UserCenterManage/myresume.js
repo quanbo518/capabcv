@@ -82,10 +82,11 @@ $(function () {
                 var downLen = [];
                 downList.reverse();
                 for (var i = 0; i < downList.length; i++) {
-                    var sTableViewUrl = downList[i].sTableViewUrl;
+                    var sTableViewUrl = downList[i].sTableViewUrl.replace('.png', 'pic.png').replace('.jpg', 'pic.png');
                     var dtInTime = downList[i].dtInTime;
                     var sTableTitle = downList[i].sTableTitle;
                     var sTableType = downList[i].sTableType;
+                    // var sTableViewUrl = 'modern_resume03pic.png';
 
                     if (!nUId) {
                         return
@@ -111,9 +112,9 @@ $(function () {
                     }
                 }
                 $('.downResNum').html(downLen.length);
-                /* if (!down_list) {
-                     down_list = '<div style="width:100%;text-align: center;font-size: 18px;margin-top: 50px;color:#999;">你还未下载该模板简历,快去下载吧</div>'
-                 }*/
+                if (!down_list) {
+                     down_list = '<div style="width:100%;text-align: center;font-size: 18px;margin: 50px 0;color:#999;">你还未下载该模板简历,快去下载吧</div>'
+                 }
                 $('.resume-content').html(down_list)
             },
             error: function () {
@@ -124,14 +125,13 @@ $(function () {
         })
     }
 
-    var newArr = ['', 'ppt', 'word', 'wordeng', 'table', 'mail'];
+    var newArr = ['', 'ppt', 'word', 'wordeng', 'table', 'mail','cover'];
     $('.shop_down li').each(function (i) {
         $(this).click(function () {
             $(this).addClass('item-curr').siblings().removeClass('item-curr');
             down_list(newArr[i])
         })
     });
-
     function online() {
         var resumeData;
         $.ajax({
@@ -201,8 +201,10 @@ $(function () {
     });
     //点击新建
     $('.resume-box').on('click', '#new_resume', function () {
-        addResume('15_9')
+      window.location.href="http://www.capabcv.com/resumev2/formchoice.aspx"
+        // addResume('15_9')
     })
+    //修改名称
     $('.online-resume').on('click', '.cv_name_edit', function () {
         $(this).siblings('.cv_name').attr('contenteditable', 'true').css('border', '1px solid #ddd')
 
@@ -352,6 +354,9 @@ $(function () {
                 return false;
             });
         }
+        $('.close').click(function () {
+            confirm_modal_close();
+        })
 
         //弹框关闭通用方法
         function confirm_modal_close() {
