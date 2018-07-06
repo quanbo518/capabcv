@@ -18,7 +18,7 @@ $(function () {
             },
             error: function () {},
             complete:function () {
-                $('.sidebar-menu .menu-list:nth-of-type(4)').addClass('active-curr')
+                $('.sidebar-menu .menu-list:nth-of-type(4)').addClass('active-curr');
                 orderList('0');
                 downResumeNum();
                 finishResume();

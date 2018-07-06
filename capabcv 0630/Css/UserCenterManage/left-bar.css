@@ -2,20 +2,25 @@
 body {
     font-family: "SourceHanSansCN-Normal";
 }
+
 li {
     list-style: none;
 }
+
 a {
     text-decoration: none;
 }
-@media (min-width: 1200px){
+
+@media (min-width: 1200px) {
     .container.main {
         width: 1180px;
     }
 }
-.main{
+
+.main {
     margin-top: 20px;
 }
+
 .cv-sidebar {
     /*position: relative;*/
     /*position: absolute;*/
@@ -23,10 +28,10 @@ a {
     /*height: 500px;*/
     background: #fff;
     padding: 0;
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     float: left;
     margin-bottom: 30px;
-    transition:all 0.3s ease-in ;
+    transition: all 0.3s ease-in;
 }
 
 .sidebar-top {
@@ -43,11 +48,11 @@ a {
     border-radius: 50%;
     overflow: hidden;
     display: block;
-    
+
 }
 
 .sidebar-top .img-box img {
-   width: 100%;
+    width: 100%;
     height: 100%;
 }
 
@@ -61,25 +66,28 @@ a {
     text-align: center;
 }
 
- .btn-member {
+.btn-member {
     display: inline-block;
     width: 96px;
     line-height: 30px;
     background: #ff7561;
     border-radius: 15px;
     margin-top: 20px;
-    color:#fff;
+    color: #fff;
     font-size: 16px;
 }
-.btn-member：hover{
-    background: #ccc!important;
+
+.btn-member:hover {
+    background: #ff5b45 !important;
 }
+
 .sidebar-menu {
     padding: 0;
     position: relative;
 }
-.sidebar-menu .menu-list{
-    padding-left:40px;
+
+.sidebar-menu .menu-list {
+    padding-left: 40px;
     position: relative;
     height: 50px;
     line-height: 50px;
@@ -87,26 +95,32 @@ a {
     font-size: 16px;
     color: #333;
 }
-.sidebar-menu .menu-list:hover{
+
+.sidebar-menu .menu-list:hover {
     background: #f2f2f2;
 }
-.list-curr{
+
+.list-curr {
     background: #f2f2f2;
 }
-.hover-curr{
-border-left:3px solid #ff7561;
+
+.hover-curr {
+    border-left: 3px solid #ff7561;
 }
-.sidebar-bottom{
+
+.sidebar-bottom {
     position: relative;
     margin-top: 100px;
     text-align: center;
     border-top: 1px solid #ccc;
     cursor: pointer;
 }
-.sidebar-bottom:hover{
+
+.sidebar-bottom:hover {
     background: #f2f2f2;
 }
-.sidebar-bottom>a{
+
+.sidebar-bottom > a {
     line-height: 50px;
     width: 100%;
     color: #666;
@@ -114,54 +128,63 @@ border-left:3px solid #ff7561;
     display: inline-block;
 }
 
-.icon{
+.icon {
     margin-right: 15px;
     display: inline-block;
-    background:  url('../../Images/userCenterMangage/icon-left.png') ;
+    background: url('../../Images/userCenterMangage/icon-left.png');
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
     vertical-align: middle;
 }
-.icon-1{
+
+.icon-1 {
     background-position: -8px -10px;
 }
-.icon-2{
+
+.icon-2 {
     background-position: -34px -10px;
 }
-.icon-3{
+
+.icon-3 {
     background-position: -60px -10px;
 }
-.icon-4{
+
+.icon-4 {
     background-position: -88px -10px;
 }
-.icon-5{
+
+.icon-5 {
     position: absolute;
     top: 17px;
     left: 50px;
     background-position: -112px -10px;
 }
-.icon-6{
+
+.icon-6 {
     background-position: -135px -10px;
 }
+
 @media (max-width: 768px) {
-    .cv-sidebar{
+    .cv-sidebar {
         margin-left: -260px;
     }
 
+}
 
-}@media (max-width: 1200px) {
-    .container-main{
+@media (max-width: 1200px) {
+    .container-main {
         margin-left: -30px;
     }
 
 }
 
-@media (max-width: 996px){
-    .container.main{
+@media (max-width: 996px) {
+    .container.main {
         width: auto;
         /*margin: 10px;*/
     }
+
     .container-main.col-sm-9 {
         width: 68%;
     }
