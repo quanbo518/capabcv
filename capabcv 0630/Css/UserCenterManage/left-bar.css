@@ -164,7 +164,9 @@ a {
 .icon-6 {
     background-position: -135px -10px;
 }
-
+.container-main{
+    padding: 0;
+}
 @media (max-width: 768px) {
     .cv-sidebar {
         margin-left: -260px;

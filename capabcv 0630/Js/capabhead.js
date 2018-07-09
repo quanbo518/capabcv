@@ -68,10 +68,8 @@ function userlogout() {
         }
     });
 }
-
 function userlogwrite(pageview) {
     var stamproot = GetQueryString("stamp");
-
     $.post("/UsersV2.ashx?useraction=usermutilog", { "pageview": pageview, "stamp": stamproot }, function (data, status) {
         if (status == "success") {
 

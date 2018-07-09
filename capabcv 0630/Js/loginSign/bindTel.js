@@ -9,7 +9,8 @@ $(function () {
     }
     var sTel='';
     var Reurl=GetQueryString('Reurl');
-    login()
+    console.log(Reurl);
+    login();
     function login() {
         $.ajax({
             type: "get",
@@ -37,6 +38,8 @@ $(function () {
             }
         });
     }
+
+
     $('.form-control').focus(function () {
         $(this).css({'background': '#fff', 'border-color': '#ccc'})
     });
@@ -152,8 +155,12 @@ $(function () {
     $('.sms-cd-btn').on('click', function () {
         var telVal = $('.sign-phone').val();
         // isRegister(telVal);
-        bindcodesend(telVal);
-        settime($(this))
+
+        if($('.sign-phone').hasClass('success')){
+            bindcodesend(telVal);
+            // settime($(this))
+        }
+
 
     });
 
@@ -167,20 +174,6 @@ $(function () {
         }
     });
 
-    /*$('.sign-sub').on('click',function () {
-     var sTel = $(".sign-phone").val();
-     var sTelcheck = $("#InputYzmT").val();
-     var sPassed = $("#password").val();
-     var sParent = $("#password").val();
-     console.log(sTel);
-     signNew({
-     sEmail: sTel,
-     sTel: sTel,
-     sPassed: sPassed,
-     sTelcheck: sTelcheck,
-     sParent: sParent
-     })
-     })*/
 //点击绑定
     $('.sign-sub').on('click', function () {
 

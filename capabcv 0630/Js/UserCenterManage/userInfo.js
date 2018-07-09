@@ -1,6 +1,6 @@
 $(function () {
     var nUId = "";
-    var type="";
+    var type = "";
 //点击编辑
     $('.basic').on('click', '.btn-editor', function (e) {
         if ($(this).text() == '编辑') {
@@ -37,7 +37,7 @@ $(function () {
                 var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
                 $('.sidebar-menu .menu-list:first-child').addClass('active-curr')
                 if (loginData) {
-                    var sPhoto=loginData.sPhoto?loginData.sPhoto:"../Images/userPhoto";
+                    var sPhoto = loginData.sPhoto ? loginData.sPhoto : "../Images/userPhoto";
                     // var sPhoto="../Images/userPhoto.png";
 
                     $('#nickName').val(loginData.sNick);
@@ -57,7 +57,7 @@ $(function () {
                         $('.no-bind').hide()
                     }
                     console.log(getCaption(loginData.sEmail));
-                    if (getCaption(loginData.sEmail)!='capabcv.com') {
+                    if (getCaption(loginData.sEmail) != 'capabcv.com') {
                         $('.email-bind').html(loginData.sEmail)
                         $('.email-name').html(loginData.sEmail)
                         $('.success-email').show()
@@ -67,10 +67,11 @@ $(function () {
             }
         })
     }
+
 //截取字符串
-    function getCaption(obj){
-        var index=obj.lastIndexOf("\@");
-        obj=obj.substring(index+1,obj.length);
+    function getCaption(obj) {
+        var index = obj.lastIndexOf("\@");
+        obj = obj.substring(index + 1, obj.length);
         return obj;
     }
 
@@ -91,11 +92,11 @@ $(function () {
         }
 
         if (nickName.length > 15 || usermemo.length > 200) {
-            alertBox("信息填写有误，请完善后重新提交！","err");
+            alertBox("信息填写有误，请完善后重新提交！", "err");
             $("#ws_confirm").removeAttr("disabled");
             return false;
         }
-        updateInfo(userInfo)
+        updateInfo(userInfo);
         $('.people_nick').html(nickName)
     });
     $('#newPass').on('keydown keyup', function () {
@@ -104,22 +105,22 @@ $(function () {
         if (!log_pass.test($(this).val())) {
             $('.pass-msg').show()
         } else {
-            $('.pass-msg').hide()
+            $('.pass-msg').hide();
             $(this).addClass('success')
         }
-    })
+    });
     //修改密码
     $('#passSave').click(function () {
         var log_pass = /^(?![^A-Za-z]+$)(?![^0-9]+$)[\x21-x7e]{6,16}$/;
         var oldPass = $('#oldPass').val();
         var newPass = $('#newPass').val();
         if (!newPass || !oldPass) {
-            alertBox("密码不能为空","err");
+            alertBox("密码不能为空", "err");
             return
         }
-        if(!log_pass.test(newPass)){
-            alertBox("大写字母、小写字母、数字和标点符号至少包含2种长度6-20","err");
-            $('.pass-msg').show()
+        if (!log_pass.test(newPass)) {
+            alertBox("大写字母、小写字母、数字和标点符号至少包含2种长度6-20", "err");
+            $('.pass-msg').show();
             return
         }
         $.ajax({
@@ -132,7 +133,7 @@ $(function () {
                     alertBox('修改成功', 'right')
                 }
                 if (data == 1) {
-                    alertBox('当前密码不正确','err')
+                    alertBox('当前密码不正确', 'err')
                 }
             },
             error: function () {
@@ -142,74 +143,78 @@ $(function () {
     $('.change-phone').click(function () {
         $('.success-bind').hide()
         $('.no-bind').show()
-    })
+    });
     $('#change-email').click(function () {
         $('.success-email').hide()
         $('.no-email').show()
-    })
+    });
 //手机验证
-    $('#userphone').on('keyup',function () {
+    $('#userphone').on('keyup', function () {
         var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
         var sTel = $(this).val();
-        if(log_pho.test(sTel)){
+        if (log_pho.test(sTel)) {
             isRegister(sTel)
-        }else{
+        } else {
             $(this).removeClass('success');
             $('.sms-cd-btn').removeClass('curr-bg').attr('disabled', 'disabled')
         }
-        if($(this).val().length==11&&!log_pho.test(sTel)){
+        if ($(this).val().length == 11 && !log_pho.test(sTel)) {
             $('.err-msg').show().html('请输入正确的手机号码');
         }
     });
 
 //点击发送验证码
-    $('.sms-cd-btn').on('click',function () {
-     var sTel=$('#userphone').val();
-            $.ajax({
-                url: "http://www.capabcv.com/usersget.ashx?useraction=telcheckcodesend",
-                data: {sTel: sTel},
-                dataType: 'jsonp',
-                type: 'get',
-                success: function (data) {
-                    if (data == 0) {
-                        alert('发送成功')
-                    }
-                },
-                error: function () {
+    $('.sms-cd-btn').on('click', function () {
+        var sTel = $('#userphone').val();
+        $.ajax({
+            url: "http://www.capabcv.com/usersget.ashx?useraction=telcheckcodesend",
+            data: {sTel: sTel},
+            dataType: 'jsonp',
+            type: 'get',
+            success: function (data) {
+                if (data == 0) {
+                    alert('发送成功')
                 }
-            })
-               settime($(this))
-    })
+            },
+            error: function () {
+            }
+        });
+        settime($(this))
+    });
     //点击提交
     $('#bind-tel').on('click', function () {
         var sTel = $('#userphone').val();
         var Telcheck = $('.phone_yzm ').val();
-        if(!Telcheck){
-            alertBox('请输入验证码')
+        if (!sTel) {
+            alertBox('请输入手机号码','err');
+            return
         }
-            $.ajax({
-                url: "http://www.capabcv.com/usersget.ashx?useraction=userteleditbycheck",
-                data: {sTel: sTel,Telcheck:Telcheck},
-                dataType: 'jsonp',
-                type: 'get',
-                success: function (data) {
-                    if (data == 0) {
-                        $('.bind-phone').html(sTel)
-                        $('.tel-num').html(sTel)
-                        $('.success-bind').hide()
-                        $('.no-bind').show()
-                        alertBox('绑定成功','right')
-                    }
-                    if(data==1){
-                        $('.err-msg').show().html('该手机号码已经绑定');
-                    }
-                    if(data==7){
-                        alertBox('验证码不正确','err')
-                    }
-                },
-                error: function () {
+        if (!Telcheck) {
+            alertBox('请输入验证码','err');
+            return
+        }
+        $.ajax({
+            url: "http://www.capabcv.com/usersget.ashx?useraction=userteleditbycheck",
+            data: {sTel: sTel, Telcheck: Telcheck},
+            dataType: 'jsonp',
+            type: 'get',
+            success: function (data) {
+                if (data == 0) {
+                    $('.bind-phone').html(sTel);
+                    $('.tel-num').html(sTel);
+                    $('.success-bind').hide();
+                    $('.no-bind').show();
+                    alertBox('绑定成功', 'right')
                 }
-            })
+                if (data == 1) {
+                    $('.err-msg').show().html('该手机号码已经绑定');
+                }
+                if (data == 7) {
+                    alertBox('验证码不正确', 'err')
+                }
+            },
+            error: function () {}
+        })
 
     });
     //修改邮箱
@@ -217,7 +222,7 @@ $(function () {
         var log_ema = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/;//对邮箱正则
         var sEmail = $('#useremail').val()
         if (!sEmail) {
-            alertBox('请输入邮箱','err')
+            alertBox('请输入邮箱', 'err')
             return
         }
         $.ajax({
@@ -235,36 +240,36 @@ $(function () {
                         alertBox('修改成功', 'right')
                     }
                     if (data == 1) {
-                        alertBox('该邮箱已被注册,请更换新的邮箱','err')
+                        alertBox('该邮箱已被注册,请更换新的邮箱', 'err')
                     }
                 } else {
-                    alertBox('请输入正确的邮箱','err')
+                    alertBox('请输入正确的邮箱', 'err')
                 }
             },
             error: function () {
             }
         })
-    })
+    });
+
 //修改信息
     function updateInfo(datas) {
-        // $.ajax({
-        //     	type: "get",
-        //     	async: false,
-        //     	url: "http://www.capablist.com/usersget.ashx?useraction=userinfoedit",
-        //         data: datas,
-        //         dataType: "jsonp",
-        //     	jsonp: "callback",
         $.ajax({
-            type: "post",
-            url: "/usersget.ashx?useraction=userinfoeditpost",
-            data: datas,
+            type: "get",
             async: false,
-            dataType: "json",
+            url: "http://www.capabcv.com/usersget.ashx?useraction=userinfoalledit",
+            data: datas,
+            dataType: "jsonp",
             jsonp: "callback",
+        // $.ajax({
+        //     type: "post",
+        //     url: "/usersget.ashx?useraction=userinfoeditpost",
+        //     data: datas,
+        //     async: false,
+        //     dataType: "json",
+        //     // jsonp: "callback",
             success: function (data) {
-                // history.go(0)
-                alertBox('保存成功','right')
-
+                history.go(0);
+                alertBox('保存成功', 'right')
             },
             error: function () {
             },
@@ -272,7 +277,9 @@ $(function () {
             }
         });
     }
-    photoUpLode()
+
+    photoUpLode();
+
     //上传头像
     function photoUpLode() {
         $(".photo-change,#againUpLoad,.up-img").click(function (e) {
@@ -298,12 +305,12 @@ $(function () {
                     file = files[0];
                     var files_type = file.type.split('/')[0];
                     if (files_type != 'image') {
-                        alertBox("格式错误，请上传JPG、PNG图片","err");
+                        alertBox("格式错误，请上传JPG、PNG图片", "err");
                         $inputImage.val('');
                         return;
                     }
                     if (file.size > 1048576) {
-                        alertBox("图片过大，请上传大小为1M以内的图片","err");
+                        alertBox("图片过大，请上传大小为1M以内的图片", "err");
                         $inputImage.val('');
                         return;
                     }
@@ -325,7 +332,7 @@ $(function () {
         $('#photoOk').unbind();
         $('#photoOk').on('click', function () {
             if (!$('.cropper-view-box > img').attr("src")) {
-                alertBox("您还未上传要裁剪得头像",'err');
+                alertBox("您还未上传要裁剪得头像", 'err');
                 return;
             }
             $("#photoModal").modal("hide");
@@ -357,25 +364,26 @@ $(function () {
                 dataType: "json",
                 async: false,
                 success: function (data) {
-                    alertBox('修改成功','right');
+                    alertBox('修改成功', 'right');
                     $(".photo-cont").attr('src', result.toDataURL("image/png"));
                     $(".preview .userPhoto").attr('src', result.toDataURL("image/png"));
                     $(".user-head").attr('src', result.toDataURL("image/png"));
                 },
                 error: function () {
-                    alertBox("网络异常，请稍后重试；上传头像",'err');
+                    alertBox("网络异常，请稍后重试；上传头像", 'err');
                 },
             });
         })
     }
+
     $("#nickName").on('keydown keyup', function (e) {
         $(".nick-num .curr-num").html($("#nickName").val().trim().length);
-      /*  if ($(".nick-num .curr-num").html() == 0) {
-            $("#nickName").css({"border": "1px solid red"});
-            $(".nick-num .curr-num").css({"color": "red"});
-            $(".nick .points-write").html("昵称不能为空！").show();
-        } else*/
-            if ($(".nick-num .curr-num").html() < 16) {
+        /*  if ($(".nick-num .curr-num").html() == 0) {
+              $("#nickName").css({"border": "1px solid red"});
+              $(".nick-num .curr-num").css({"color": "red"});
+              $(".nick .points-write").html("昵称不能为空！").show();
+          } else*/
+        if ($(".nick-num .curr-num").html() < 16) {
             $("#nickName").css({"border": "1px solid #e8e8e8"});
             $(".nick-num .curr-num").css({"color": "#999"});
             $(".nick.points-write").hide();
@@ -411,15 +419,16 @@ $(function () {
             $(".memo .points-write").hide();
         }
     })
+
     //报错弹框
     function alertBox(text, type) {
         $(".errorBox p").html(text);
-        if(type=='err'){
-            $('.errorBox img').removeAttr('src')
+        if (type == 'err') {
+            $('.errorBox img').removeAttr('src');
             $('.errorBox img').attr('src', '../Images/error-msg.png');
         }
-            if(type=='right'){
-                $('.errorBox img').removeAttr('src')
+        if (type == 'right') {
+            $('.errorBox img').removeAttr('src');
             $('.errorBox img').attr('src', '../Images/right.png');
         }
         $(".cover").fadeIn(200);
@@ -435,6 +444,7 @@ $(function () {
         }, 1000);
         return;
     }
+
     //绑定验证
     function isRegister(username) {
         var rightData = "";
@@ -457,10 +467,10 @@ $(function () {
                 } else if (rightData == 1) {
                     $('.err-msg').html('').hide();
                     $('#userphone').addClass('success');
-                    if($('.sms-cd-btn').hasClass('no-click')){
+                    if ($('.sms-cd-btn').hasClass('no-click')) {
                         $('.sms-cd-btn').removeClass('curr-bg').attr('disabled', 'disabled')
                         return
-                    }else{
+                    } else {
                         $('.sms-cd-btn').addClass('curr-bg').removeAttr('disabled');
                     }
 
@@ -469,8 +479,6 @@ $(function () {
             }
         })
     }
-
-
     var countdown = 60;
 //定时器
     function settime(obj) {

@@ -14,12 +14,11 @@ $(function () {
         },
         error:function () {
             alert('信息获取失败，请检查是否登录！');
-            window.location.href='http://www.capabcv.com/login.html'
+            window.location.href='http://www.capabcv.com/login.aspx?Reurl='
         },
         complete: function () {
         }
-
-    })
+    });
 $('.sidebar-bottom').click(function () {
     userlogout()
 })

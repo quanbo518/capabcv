@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,9 +20,10 @@
     <![endif]-->
 </head>
 <style>
-    .active-curr{
+    .active-curr {
         background: #f2f2f2;
     }
+
     .active-curr::before {
         position: absolute;
         content: "";
@@ -201,7 +201,7 @@
     $(document).ready(function () {
         usersload();
         $(".left-bar").load("../UserCenterManage/left-bar.html")
-    })
+    });
 
     $(window).on('load', function () {
 

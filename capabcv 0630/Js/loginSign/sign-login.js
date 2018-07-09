@@ -193,12 +193,11 @@ function useradditionalemail() {
 //注册验证码
 function siginCodesend(sTel) {
     if (sTel != "") {
-        console.log('注册验证');
         $.post("/UsersV2.ashx?useraction=usertelcodesend2", {sTel: sTel}, function (data, status) {
 
             if (status == "success") {
                 if (data == "0") {
-                    alert("发送成功");
+                    // alert("发送成功");
                     settime($('.sms-cd-btn'))
                 }
             }
@@ -215,7 +214,6 @@ function logincodesend() {
         $.post("/UsersV2.ashx?useraction=usertelcodesend", {"sTel": sTel}, function (data, status) {
             if (status == "success") {
                 if (data == "0") {
-                    alert("发送成功");
                     settime($('.sms-cd-btn'))
                 }
             }
@@ -233,7 +231,8 @@ function bindcodesend(sTel) {
         type: 'get',
         success: function (data) {
             if (data == 0) {
-                alert('发送成功')
+                // alert('发送成功')
+                settime($('#sms-send-cd-btn'))
             }
         },
         error: function () {

@@ -57,9 +57,8 @@ $.fn.drag = function(options) {
         var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
         if($('.sign-phone').val()!=""){
             $('.sign-pass ,.sign-yzm').show();
-            // $('.')
             if(log_pho.test($('.sign-phone').val())){
-                $('.sms-cd-btn').addClass('yzm-curr').removeAttr('disabled')
+                // $('.sms-cd-btn').addClass('yzm-curr').removeAttr('disabled')
             }
 
             if($('.get-username').val()!=''){

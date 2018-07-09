@@ -15,10 +15,11 @@ $(function () {
             jsonp: "callback",
             success: function (data) {
                 nUId = data.nId;
+                $('.sidebar-menu .menu-list:nth-of-type(4)').addClass('active-curr');
             },
             error: function () {},
             complete:function () {
-                $('.sidebar-menu .menu-list:nth-of-type(4)').addClass('active-curr');
+
                 orderList('0');
                 downResumeNum();
                 finishResume();

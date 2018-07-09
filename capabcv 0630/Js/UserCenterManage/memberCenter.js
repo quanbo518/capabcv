@@ -14,7 +14,7 @@ $(function () {
             error: function () {
             },
             complete: function () {
-                $('.sidebar-menu .menu-list:last-child').addClass('active-curr')
+                $('.sidebar-menu .menu-list:last-child').addClass('active-curr');
                 orderList();
             }
         });

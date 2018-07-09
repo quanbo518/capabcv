@@ -6,12 +6,13 @@ $(function () {
         return null;
     }
 
-    var ReUrl = GetQueryString('ReUrl')
-    var loginType = GetQueryString('loginType')
+    var ReUrl = GetQueryString('ReUrl');
+    console.log(ReUrl);
+    var loginType = GetQueryString('loginType');
     if (loginType != null) {
         if (loginType == 'pwd') {
             $('.log-write').show();
-            $('.log-quick').hide()
+            $('.log-quick').hide();
             $('.icon-btn ').removeClass('icon-pc').addClass('icon-weixin')
         } else {
 
