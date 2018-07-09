@@ -46,7 +46,7 @@ $(function () {
                     dataType: "jsonp",
                     jsonp: "callback",
                     beforeSend:function () {
-                        $('.shop_allList').html('<div style="width:100%;margin: 60px auto;font-size: 18px;text-align: center;color:#999">你还没有购买任何订单呢</div>');
+                        $('.shop_allList').html('<div style="margin: 0 auto;text-align: center"><img src="../Images/loading.png" style="width:40px;margin: 60px auto;font-size: 18px;text-align: center"></div>');
                     },
                     success: function (data) {
                         datar = data.OrderInfoClass;
@@ -103,8 +103,13 @@ $(function () {
                             }
                             if(!order){
                                 order='<div style="width:100%;margin: 60px auto;font-size: 18px;text-align: center;color:#999">你还没有购买相关订单呢</div>'
+                                if(sOrderStatus1==1){
+                                    order='<div style="width:100%;margin: 60px auto;font-size: 18px;text-align: center;color:#999">没有未完成的订单</div>'
+                                }
                             }
-                            $('.shop_allList').html(order);}
+
+                            $('.shop_allList').html(order);
+                            }
 
                     },
                     error: function () {},

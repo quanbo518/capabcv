@@ -47,7 +47,7 @@ $(function () {
                         var orderStr = "";
                         var type = '';
                         var timeNum = '';
-                        $('.pay-box').empty()
+                        $('.pay-box').empty();
                         // console.log(successArr.length);
                         if(successArr.length<=0){
                             $('.order-box').append('<div class="err-tips" style="width:100%;margin: 60px auto;font-size: 18px;text-align: center;color:#999">你还没有购买任何订单呢</div>');
@@ -92,7 +92,9 @@ $(function () {
             day = endTime.getDate(),
             hour = endTime.getHours(),
             min = endTime.getMinutes(),
-            sec = endTime.getSeconds();
+            sec = endTime.getSeconds()>10?endTime.getSeconds():'0'+endTime.getSeconds();
+
+        console.log(sec);
         result = year + '/' +
             month + '/' +
             day + ' ' +
