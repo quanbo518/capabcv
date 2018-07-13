@@ -67,7 +67,11 @@ $(function () {
                                     type = "白银会员";
                                     timeNum = 93
                                 }
-                                // console.log(new Date(successArr[k].dtInTime).getTime()+100*24);
+
+                          /*  var nowTime=new Date();
+                            if(nowTime>= new Date(newTime(successArr[k].dtInTime, timeNum))) {
+                                type='会员已到期'
+                            }*/
                                 orderStr += '<tr>' +
                                     '<td>' + successArr[k].dtInTime + '</td>' +
                                     ' <td>' + newTime(successArr[k].dtInTime, timeNum) + '</td>' +
@@ -103,5 +107,7 @@ $(function () {
             sec;
         return result;
     }
+
+
 })
 

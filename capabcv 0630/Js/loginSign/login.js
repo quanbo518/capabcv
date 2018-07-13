@@ -6,8 +6,8 @@ $(function () {
         return null;
     }
 
-    var ReUrl = GetQueryString('ReUrl');
-    console.log(ReUrl);
+    var Reurl = GetQueryString('Reurl');
+    console.log(Reurl);
     var loginType = GetQueryString('loginType');
     if (loginType != null) {
         if (loginType == 'pwd') {
@@ -137,7 +137,7 @@ $(function () {
             var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
             var pho_val = $('.login-phone').val();
             if (log_pho.test(pho_val)) {
-                loginRegister(pho_val);
+                // loginRegister(pho_val);
             } else if (!log_pho.test(pho_val)) {
                 $('.error-msg').show();
                 $('.err-sms-msg').html('请输入正确的手机号');
@@ -145,7 +145,7 @@ $(function () {
             if (log_pho.test(pho_val) && $('.login-phone').hasClass('success-curr')) {
                 console.log('登录');
                 // Save();
-                smsLogin(ReUrl);
+                smsLogin(Reurl);
             }
         })
 

@@ -8,7 +8,7 @@ $(function () {
         if(r != null) return unescape(r[2]);
         return null;
     }
-    var ReUrl=GetQueryString('ReUrl')
+    var Reurl=GetQueryString('Reurl')
     $('.form-control').focus(function () {
         $(this).css({'background': '#fff', 'border-color': '#ccc'})
     });
@@ -155,7 +155,7 @@ $(function () {
 //点击注册
     $('.sign-sub').on('click', function () {
         if ($('#Useragreement').hasClass('success')) {
-            sign();
+            sign(Reurl);
         }
     });
 
@@ -163,7 +163,7 @@ $(function () {
         if (e.keyCode == 13) {
             console.log(13);
             if ($('#Useragreement').hasClass('success')) {
-                sign();
+                sign(Reurl);
             }
         }
 

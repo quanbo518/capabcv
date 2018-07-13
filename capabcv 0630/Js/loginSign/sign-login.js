@@ -59,10 +59,11 @@ function sign(Reurl) {
         "sTelcheck": sTelcheck
         // "sParent": sParent
     }, function (data, status) {
+
         if (status == "success") {
             if (data == "0") {
                 localStorage.setItem("sTemplate", "");
-                if(Reurl!=""||Reurl!=null){
+                if (Reurl != "" && Reurl != null) {
                     window.location.href = Reurl;
                 }else{
                     window.location.href = "http://www.capabcv.com";
@@ -99,20 +100,19 @@ function passLogin(Reurl) {
     var sPassed = $("#password").val();
     var sReurl = "";
     var iLink = "";
-    $.post("/UsersV2.ashx?useraction=userlogin", {
-        "sEmail": sEmail,
-        "sPassed": sPassed
-    }, function (data, status) {
+    $.post("/UsersV2.ashx?useraction=userlogin", {"sEmail": sEmail,"sPassed": sPassed}, function (data, status) {
         if (status == "success") {
             if (data == "0") {
                 $('.error-msg').hide();
-                if(Reurl!=""||Reurl!=null){
-
+                if (Reurl != "" && Reurl != null)
+                {
                     window.location.href = Reurl;
-                }else{
+                }
+                else
+                {
                     window.location.href = "http://www.capabcv.com";
                 }
-               /* if (Reurl == "1") {
+                /* if (Reurl == "1") {
                     // window.location.href = "http://www.capabcv.com";
                     window.location.href = Reurl;
                 }
@@ -152,8 +152,7 @@ function smsLogin(Reurl) {
         if (status == "success") {
             if (data == "0") {
                 $('.error-msg').hide();
-                if(Reurl!=""||Reurl!=null){
-
+                if (Reurl != "" && Reurl != null) {
                     window.location.href = Reurl;
                 }else{
                     window.location.href = "http://www.capabcv.com";

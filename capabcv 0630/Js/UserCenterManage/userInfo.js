@@ -1,18 +1,33 @@
 $(function () {
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
     var nUId = "";
-    var type = "";
+    var type = GetQueryString('type');
+    console.log(type);
+    if(type=='resetpwd'){
+$('.reset-pwd .basic-title').css('border-bottom', '1px dashed #e8e8e8');
+$('.reset-pwd .out-box').css('display', 'block');
+$('.reset-pwd .btn-editor').text('收起').css('background-position', ' right -48px')
+}else{
+        // return
+    }
 //点击编辑
     $('.basic').on('click', '.btn-editor', function (e) {
         if ($(this).text() == '编辑') {
-            $(this).siblings('.out-box').slideDown()
-            $(this).siblings('.basic-title').css('border-bottom', '1px dashed #e8e8e8')
+            $(this).siblings('.out-box').slideDown();
+            $(this).siblings('.basic-title').css('border-bottom', '1px dashed #e8e8e8');
             $(this).text('收起').css('background-position', ' right -48px')
         } else {
-            $(this).siblings('.out-box').slideUp()
-            $(this).text('编辑').css('background-position', 'right 12px')
+            $(this).siblings('.out-box').slideUp();
+            $(this).text('编辑').css('background-position', 'right 12px');
             $(this).siblings('.basic-title').css('border', 'none')
         }
-        $(this).parent().siblings().find('.out-box').slideUp()
+        $(this).parent().siblings().find('.out-box').slideUp();
         $(this).parent().siblings().find('.btn-editor').text('编辑').css('background-position', ' right 12px')
         $(this).parent().siblings().find('.basic-title').css('border', 'none')
     })
@@ -35,11 +50,10 @@ $(function () {
             },
             complete: function () {
                 var log_pho = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
-                $('.sidebar-menu .menu-list:first-child').addClass('active-curr')
+                $('.sidebar-menu .menu-list:first-child').addClass('active-curr');
                 if (loginData) {
                     var sPhoto = loginData.sPhoto ? loginData.sPhoto : "../Images/userPhoto";
                     // var sPhoto="../Images/userPhoto.png";
-
                     $('#nickName').val(loginData.sNick);
                     $('.userNick').val(loginData.sNick);
                     $('#usermemo').val(loginData.sSelfMemo);
@@ -56,8 +70,8 @@ $(function () {
                         $('.success-bind').show()
                         $('.no-bind').hide()
                     }
-                    console.log(getCaption(loginData.sEmail));
-                    if (getCaption(loginData.sEmail) != 'capabcv.com') {
+                    // console.log(getCaption(loginData.sEmail));
+                    if (getCaption(loginData.sEmail) != 'capabcv.com'&&getCaption(loginData.sEmail) !="") {
                         $('.email-bind').html(loginData.sEmail)
                         $('.email-name').html(loginData.sEmail)
                         $('.success-email').show()
@@ -67,14 +81,12 @@ $(function () {
             }
         })
     }
-
 //截取字符串
     function getCaption(obj) {
         var index = obj.lastIndexOf("\@");
         obj = obj.substring(index + 1, obj.length);
         return obj;
     }
-
 
     $('#saveMsg').click(function () {
         var nickName = $('#nickName').val(),
@@ -392,7 +404,7 @@ $(function () {
             $(".nick-num .curr-num").css({"color": "red"});
             $(".nick .points-write").html("昵称不能多于15字！").show();
         }
-    })
+    });
     //微信号字数
     $("#wechat_id").on('keydown keyup', function (e) {
         $(".wechat-num .curr-num").html($("#wechat_id").val().trim().length);
@@ -418,7 +430,7 @@ $(function () {
             $(".memo-num .curr-num").css({"color": "#999"});
             $(".memo .points-write").hide();
         }
-    })
+    });
 
     //报错弹框
     function alertBox(text, type) {

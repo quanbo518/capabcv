@@ -6,10 +6,10 @@
     <title>个人信息</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="../Css/plugin/iconfont.css">-->
     <link rel="stylesheet" href="../Css/lib/cropper.min.css">
     <link rel="stylesheet" href="../Css/StyleGlobal.css">
     <link rel="stylesheet" href="../Css/headandfoot.css">
-    <link rel="stylesheet" href="../Css/plugin/iconfont.css">
     <link rel="stylesheet" href="../fonts/cv3.0/icon-font.css">
     <link rel="stylesheet" href="../Css/UserCenterManage/userInfo.css">
 
@@ -18,10 +18,12 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <style>
-    .active-curr{
+    .active-curr {
         background: #f2f2f2;
     }
+
     .active-curr::before {
         position: absolute;
         content: "";
@@ -101,7 +103,7 @@
                                                 aria-labelledby='dLabel'>
                                                 <li><a href='/SimpReglog.aspx?ingate=1&stamp=&Reurl=&T='
                                                        class='iconfont icon-zhuye'>登录领贤</a></li>
-                                                <li><a href='/userpassback.aspx' target='_blank'
+                                                <li><a href='/getpassword.html' target='_blank'
                                                        class='iconfont icon-jianliguanli'>找回密码</a></li>
                                             </ul>
                                         </div>
@@ -130,7 +132,6 @@
 </div>
 
 <div class="container main">
-
     <!--//左侧-->
     <div class="left-bar"></div>
     <div class="row">
@@ -193,11 +194,10 @@
                         <div class="out-box">
                             <div class="inner-content">
                                 <div class="photo-box">
-                                    <img src="../Images/regandlog.png" alt="" class="photo-cont" style="width: 150px;height: 150px;">
+                                    <img src=""  class="photo-cont"
+                                         style="width: 150px;height: 150px;">
                                     <p class="photo-change">修改头像</p>
                                 </div>
-
-
                                 <button class="up-img" style="margin-left: 50px;">上传头像</button>
                             </div>
                         </div>
@@ -268,7 +268,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="basic-list clearfix">
+                    <div class="basic-list reset-pwd clearfix">
                         <div class="basic-title title-left">密码设置
                             <div class="preview">******</div>
                         </div>
@@ -344,15 +344,15 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
-   <!-- <input type="file" id="headPhoto" class="hidden">
-    <div id="gotop" title="返回顶部"></div>-->
+    <input type="file" id="headPhoto" class="hidden">
+    <!--<div id="gotop" title="返回顶部"></div>-->
 </div>
 
 <script src="../Js/jquery-2.2.3.min.js"></script>
 <script src="../Js/bootstrap.min.js "></script>
 <script src="../Js/lib/cropper.min.js"></script>
 <script src="../Js/capabhead.js"></script>
-<script src="../Js/UserCenterManage/userInfo.js "></script>
+<script src="../Js/UserCenterManage/userInfo.js"></script>
 <script>
     // 加载头部和侧边
     $(document).ready(function () {
@@ -361,7 +361,7 @@
     });
 
     $(window).on('load', function () {
-   $('.sidebar-menu .menu-list:first-child').addClass('active-curr')
+        $('.sidebar-menu .menu-list:first-child').addClass('active-curr')
     })
 </script>
 </body>

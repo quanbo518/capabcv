@@ -55,7 +55,7 @@ $(function () {
         if (log_pho.test($(this).val())) {
             getRegister($(this).val())
         } else {
-            $('.sign-phone-msg').show().html('请输入正确的手机号')
+            $('.sign-phone-msg').show().html('请输入正确的手机号');
             $('.get-cd-btn').removeClass('yzm-curr').attr('disabled', 'disabled')
         }
         if ($('.drag_text').text() == '验证通过') {

@@ -148,14 +148,14 @@ $(function () {
                 // nUId = resumeData[0].nUId;
             },
             complete: function () {
-                var onlineStr = ''
-                $('.resume-box').empty()
+                var onlineStr = '';
+                $('.resume-box').empty();
                 onlineStr += '<div class="resume-item col-md-3 col-sm-4 col-xs-6">' +
                     '                        <div class="iteminer">' +
                     '                            <div id="new_resume" class="icon-tianjia_1"></div>' +
                     '                            <p style="font-size: 16px;">新建简历</p>' +
                     '                        </div>' +
-                    '                    </div>'
+                    '                    </div>';
                 if (!resumeData) {
                     onlineStr += '<div style="text-align: center;margin-top: 100px;font-size: 16px;">还没有创建简历<a href="http://www.capabcv.com/resumev2/formchoice.aspx" style="text-decoration: underline">去创建</a></div>'
                 } else {
@@ -183,7 +183,7 @@ $(function () {
 
 //点击编辑
     $('.online-resume').on('click', '.edit-cv', function (e) {
-        e.stopPropagation()
+        e.stopPropagation();
         localStorage.removeItem('resumenId');
         localStorage.setItem('resumenId', $(this).attr('data-nId'));
         console.log(localStorage.getItem('resumenId'));
@@ -206,18 +206,17 @@ $(function () {
     })
     //修改名称
     $('.online-resume').on('click', '.cv_name_edit', function () {
-        $(this).siblings('.cv_name').attr('contenteditable', 'true').css('border', '1px solid #ddd')
+        $(this).siblings('.cv_name').attr('contenteditable', 'true').css('border', '1px solid #ddd');
 
         $(this).siblings('.cv_name').blur(function () {
-            $(this).removeAttr('contenteditable').css('border', 'none')
-            var text = $(this).text()
+            $(this).removeAttr('contenteditable').css('border', 'none');
+            var text = $(this).text();
             editName($(this).attr('data-nId'), text)
         })
         $(this).siblings('.cv_name').focus(function () {
             $(this).css('border-color', '#ddd')
         })
     });
-
 //删除简历
     function deleResume(nRId, obj) {
         cvConfirm({
@@ -275,11 +274,8 @@ $(function () {
             dataType: "jsonp",
             success: function (data) {
                 $("#cv_name").text(sRTitle);
-
             },
-            error: function () {
-
-            },
+            error: function () {},
         });
     }
 

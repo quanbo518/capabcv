@@ -14,7 +14,7 @@ $(function () {
         },
         error:function () {
             alert('信息获取失败，请检查是否登录！');
-            window.location.href='http://www.capabcv.com/login.aspx?Reurl='
+            window.location.href='http://www.capabcv.com/login.aspx?loginType=pwd&Reurl='
         },
         complete: function () {
         }
